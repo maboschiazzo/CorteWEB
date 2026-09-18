@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CORTE | Ventas & Soluciones Digitales</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="brand">
+            <h1>CORTE</h1>
+            <p class="tagline">Ventas & Soluciones Digitales</p>
+        </div>
+        
+        <div class="social-header">
+            <a href="https://instagram.com/clickdecorte" target="_blank" class="insta-btn">
+                🅾 @clickdecorte
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Estado de Disponibilidad -->
+        <div class="status-bar">
+            <span class="status-dot"></span>
+            <span>Disponible para nuevos proyectos y consultas</span>
+        </div>
+
+        <!-- Menú Horizontal de Solapas -->
+        <nav class="tabs-nav">
+            <button class="tab-btn active" onclick="openTab(event, 'concepto')">🍷 ¿Qué es CORTE?</button>
+            <button class="tab-btn" onclick="openTab(event, 'web')">💻 Páginas Web</button>
+            <button class="tab-btn" onclick="openTab(event, 'recitales')">🚌 Viajes & Recitales</button>
+        </nav>
+
+        <!-- SOLAPA 1: CONCEPT / SOBRE CORTE -->
+        <div id="concepto" class="tab-content active">
+            <section class="concept-card">
+                <h2>El Blend Perfecto para tu Negocio</h2>
+                <p class="quote">
+                    En enología, el <b>"corte"</b> o blend es la combinación perfecta de distintas variedades para crear un vino superior.
+                </p>
+                <p>
+                    <b>CORTE</b> representa la mezcla exacta entre <b>música, tecnología y análisis</b> para dar un servicio a medida.
+                </p>
+            </section>
+        </div>
+
+        <!-- SOLAPA 2: DESARROLLO WEB -->
+        <div id="web" class="tab-content">
+            <section class="section-title">
+                <h2>Desarrollo Web Inicial</h2>
+                <p>Tu negocio en internet de la forma más sencilla posible.</p>
+            </section>
+
+            <section class="cards-container">
+                {% for s in servicios_corte %}
+                <div class="card principal">
+                    <span class="badge">{{ s.badge }}</span>
+                    <h3>{{ s.titulo }}</h3>
+                    <p>{{ s.descripcion }}</p>
+                    
+                    <ul class="features-list">
+                        <li>⚡ Sitio 100% adaptable a celulares</li>
+                        <li>💬 Integración directa con tu WhatsApp</li>
+                        <li>🌐 Dominio y presencia limpia en la web</li>
+                        <li>👌 Pensado para principiantes (sin enredos técnicos)</li>
+                    </ul>
+
+                    <a href="https://wa.me/{{ whatsapp }}?text=Hola%20CORTE,%20quiero%20consultar%20por:%20{{ s.titulo }}" class="btn" target="_blank">Consultar por WhatsApp</a>
+                </div>
+                {% endfor %}
+            </section>
+
+            <section class="process-section">
+                <h3>Cómo trabajamos juntos</h3>
+                <div class="steps-grid">
+                    <div class="step-item">
+                        <div class="step-num">1</div>
+                        <h4>Contacto</h4>
+                        <p>Hablamos por WhatsApp para entender tu marca.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">2</div>
+                        <h4>Diseño</h4>
+                        <p>Armamos tu sitio simple y a medida.</p>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-num">3</div>
+                        <h4>¡Listo!</h4>
+                        <p>Tu web queda lista para recibir clientes.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="faq-section">
+                <h3>Preguntas Frecuentes</h3>
+                <details>
+                    <summary>¿Necesito saber sobre programación o tecnología?</summary>
+                    <p>Para nada. Nos encargamos de toda la configuración. Vos solo recibís el enlace listo para compartir.</p>
+                </details>
+                <details>
+                    <summary>¿Cómo recibo las ventas de mi negocio?</summary>
+                    <p>Cada botón de tu sitio dirige las consultas o pedidos directamente a tu chat de WhatsApp personal o de empresa.</p>
+                </details>
+            </section>
+        </div>
+
+        <!-- SOLAPA 3: VIAJES & RECITALES -->
+        <div id="recitales" class="tab-content">
+            <section class="section-title">
+                <h2>Viajes & Experiencias Recitales</h2>
+                <p>Punto de venta y gestión autorizada de <b>Modo Recital</b>.</p>
+            </section>
+
+            <section class="cards-container">
+                {% for r in servicios_recital %}
+                <div class="card secundario">
+                    <span class="badge">{{ r.badge }}</span>
+                    <h3>{{ r.titulo }}</h3>
+                    <p>{{ r.descripcion }}</p>
+                    <a href="https://wa.me/{{ whatsapp }}?text=Hola%20CORTE,%20quiero%20consultar%20sobre%20Viajes%20Modo%20Recital" class="btn" target="_blank">Consultar Viajes Generales</a>
+                </div>
+                {% endfor %}
+            </section>
+
+            <section class="shows-section">
+                <h3>🔥 Próximas Fechas / Top Shows</h3>
+                <div class="shows-grid">
+                    {% for show in proximos_shows %}
+                    <div class="show-card">
+                        <span class="show-status">{{ show.estado }}</span>
+                        <h4>{{ show.artista }}</h4>
+                        <p class="show-place">📍 {{ show.lugar }}</p>
+                        <a href="https://wa.me/{{ whatsapp }}?text=Hola%20CORTE,%20quiero%20consultar%20por%20traslado%20a:%20{{ show.artista }}" class="btn-sm" target="_blank">Consultar Fecha</a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <footer>
+        <p><b>CORTE</b> — Ventas & Soluciones Digitales</p>
+        <p class="sub-footer">Operador comercial de traslados respaldados por <b>Modo Recital</b> (@modorecital)</p>
+        <p class="author-credits">© 2026 CORTE. Todos los derechos reservados <b>M.A.A.B.</b></p>
+    </footer>
+
+    <!-- Script simple para alternar solapas -->
+    <script>
+        function openTab(evt, tabName) {
+            let i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).style.display = "block";
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+
+</body>
+</html>
