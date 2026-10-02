@@ -56,11 +56,10 @@
             </section>
 
             <section class="cards-container">
-                {% for s in servicios_corte %}
                 <div class="card principal">
-                    <span class="badge">{{ s.badge }}</span>
-                    <h3>{{ s.titulo }}</h3>
-                    <p>{{ s.descripcion }}</p>
+                    <span class="badge">🔥 Popular</span>
+                    <h3>Landing Page Inicial</h3>
+                    <p>Diseño web limpio, rápido y optimizado para presentar tu marca y recibir clientes directo en WhatsApp.</p>
                     
                     <ul class="features-list">
                         <li>⚡ Sitio 100% adaptable a celulares</li>
@@ -69,9 +68,8 @@
                         <li>👌 Pensado para principiantes (sin enredos técnicos)</li>
                     </ul>
 
-                    <a href="https://wa.me/{{ whatsapp }}?text=Hola%20CORTE,%20quiero%20consultar%20por:%20{{ s.titulo }}" class="btn" target="_blank">Consultar por WhatsApp</a>
+                    <a href="https://wa.me/5493513835105?text=Hola%20CORTE,%20quiero%20consultar%20por:%20Landing%20Page%20Inicial" class="btn" target="_blank">Consultar por WhatsApp</a>
                 </div>
-                {% endfor %}
             </section>
 
             <section class="process-section">
@@ -116,27 +114,23 @@
             </section>
 
             <section class="cards-container">
-                {% for r in servicios_recital %}
                 <div class="card secundario">
-                    <span class="badge">{{ r.badge }}</span>
-                    <h3>{{ r.titulo }}</h3>
-                    <p>{{ r.descripcion }}</p>
-                    <a href="https://wa.me/{{ whatsapp }}?text=Hola%20CORTE,%20quiero%20consultar%20sobre%20Viajes%20Modo%20Recital" class="btn" target="_blank">Consultar Viajes Generales</a>
+                    <span class="badge">🚌 Traslados Ofic.</span>
+                    <h3>Viajes a Shows & Festivales</h3>
+                    <p>Coordinación, traslados ida y vuelta y gestión de paquetes oficiales para recitales.</p>
+                    <a href="https://wa.me/5493513835105?text=Hola%20CORTE,%20quiero%20consultar%20sobre%20Viajes%20Modo%20Recital" class="btn" target="_blank">Consultar Viajes Generales</a>
                 </div>
-                {% endfor %}
             </section>
 
             <section class="shows-section">
                 <h3>🔥 Próximas Fechas / Top Shows</h3>
                 <div class="shows-grid">
-                    {% for show in proximos_shows %}
                     <div class="show-card">
-                        <span class="show-status">{{ show.estado }}</span>
-                        <h4>{{ show.artista }}</h4>
-                        <p class="show-place">📍 {{ show.lugar }}</p>
-                        <a href="https://wa.me/{{ whatsapp }}?text=Hola%20CORTE,%20quiero%20consultar%20por%20traslado%20a:%20{{ show.artista }}" class="btn-sm" target="_blank">Consultar Fecha</a>
+                        <span class="show-status">Disponible</span>
+                        <h4>Próximo Show</h4>
+                        <p class="show-place">📍 Lugar del Evento</p>
+                        <a href="https://wa.me/5493513835105?text=Hola%20CORTE,%20quiero%20consultar%20por%20traslado" class="btn-sm" target="_blank">Consultar Fecha</a>
                     </div>
-                    {% endfor %}
                 </div>
             </section>
         </div>
