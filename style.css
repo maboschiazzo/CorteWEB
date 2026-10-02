@@ -1,0 +1,312 @@
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    color: #2B2D2F;
+    background: url('/static/fondo-corte.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+header {
+    background-color: transparent;
+    color: #FFFFFF;
+    padding: 2.5rem 1rem 1rem 1rem;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+    letter-spacing: 4px;
+}
+
+.tagline {
+    font-size: 1rem;
+    color: #E0EADE;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+.social-header {
+    margin-top: 15px;
+}
+
+.insta-btn {
+    color: #FFFFFF;
+    text-decoration: none;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid #FFFFFF;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.insta-btn:hover {
+    background: #556B2F;
+}
+
+main {
+    max-width: 800px;
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+}
+
+.status-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #FFFFFF;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    width: fit-content;
+    margin: 0 auto 1.5rem auto;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+}
+
+/* NAVEGACIÓN POR SOLAPAS / TABS */
+.tabs-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    background: rgba(0, 0, 0, 0.55);
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    background: rgba(85, 107, 47, 0.7);
+}
+
+.tab-btn.active {
+    background: #556B2F;
+    border-color: #556B2F;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* CONTENIDO DE LAS SOLAPAS */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.concept-card, .process-section, .faq-section, .shows-section {
+    background: rgba(255, 255, 255, 0.96);
+    border-left: 6px solid #556B2F;
+    padding: 1.8rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.concept-card h2, .process-section h3, .faq-section h3, .shows-section h3 {
+    margin-top: 0;
+    color: #556B2F;
+}
+
+.quote {
+    font-style: italic;
+    color: #444;
+}
+
+.section-title {
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.96);
+    padding: 1.8rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-top: 5px solid #556B2F;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.badge {
+    align-self: flex-start;
+    background: #556B2F;
+    color: #FFFFFF;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.features-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.features-list li {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.btn {
+    display: block;
+    text-align: center;
+    background-color: #556B2F;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 1rem;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #3f5022;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 1.2rem;
+}
+
+.step-item {
+    padding: 1rem;
+    background: rgba(85, 107, 47, 0.08);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.step-num {
+    width: 32px;
+    height: 32px;
+    background: #556B2F;
+    color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px auto;
+    font-weight: bold;
+}
+
+.shows-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1.2rem;
+}
+
+.show-card {
+    background: rgba(85, 107, 47, 0.08);
+    border: 1px solid rgba(85, 107, 47, 0.2);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.show-status {
+    font-size: 0.7rem;
+    font-weight: bold;
+    color: #556B2F;
+    text-transform: uppercase;
+}
+
+.show-card h4 {
+    margin: 6px 0;
+}
+
+.show-place {
+    font-size: 0.8rem;
+    color: #666;
+    margin: 0 0 10px 0;
+}
+
+.btn-sm {
+    display: inline-block;
+    text-align: center;
+    background-color: #556B2F;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.btn-sm:hover {
+    background-color: #3f5022;
+}
+
+details {
+    margin-bottom: 12px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+    cursor: pointer;
+}
+
+summary {
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #FFFFFF;
+    background: rgba(0, 0, 0, 0.65);
+
+    .author-credits {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 15px;
+    letter-spacing: 0.5px;
+}
+}
+
+.sub-footer {
+    font-size: 0.85rem;
+    color: #D0DDD0;
+}
