@@ -11,43 +11,52 @@ body {
 
 header {
     background-color: transparent;
-    color: #FFFFFF;
+    color: #233D26;
     padding: 2.5rem 1rem 1rem 1rem;
     text-align: center;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    text-shadow: none;
 }
 
 header h1 {
     margin: 0;
-    font-size: 3rem;
-    letter-spacing: 4px;
+    font-size: 3.2rem;
+    letter-spacing: 5px;
+    font-weight: 800;
 }
 
 .tagline {
-    font-size: 1rem;
-    color: #E0EADE;
-    margin-top: 5px;
-    font-weight: 500;
+    font-size: 1.05rem;
+    color: #3B593F;
+    margin-top: 6px;
+    font-weight: 600;
 }
 
 .social-header {
-    margin-top: 15px;
+    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-.insta-btn {
-    color: #FFFFFF;
+.social-btn {
+    color: #233D26;
     text-decoration: none;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.75);
     padding: 8px 18px;
     border-radius: 20px;
     font-size: 0.9rem;
-    border: 1px solid #FFFFFF;
-    display: inline-block;
-    transition: all 0.3s ease;
+    font-weight: 600;
+    border: 1.5px solid #233D26;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.25s ease;
 }
 
-.insta-btn:hover {
-    background: #556B2F;
+.social-btn:hover {
+    background: #233D26;
+    color: #FFFFFF;
 }
 
 main {
@@ -64,7 +73,7 @@ main {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.55);
     color: #FFFFFF;
     padding: 6px 14px;
     border-radius: 20px;
@@ -147,11 +156,10 @@ main {
 }
 
 .section-title {
-    color: #FFFFFF;
+    color: #233D26;
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 1.5rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .cards-container {
