@@ -15,9 +15,9 @@ body {
     top: 18px;
     right: 20px;
     z-index: 900;
-    background-color: #233D26;
+    background-color: #556B2F;
     color: #FFFFFF;
-    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    border: 1.5px solid #FFFFFF;
     padding: 10px 18px;
     border-radius: 25px;
     font-size: 0.9rem;
@@ -28,7 +28,7 @@ body {
 }
 
 .agenda-top-btn:hover {
-    background-color: #3B593F;
+    background-color: #3f5022;
     transform: translateY(-2px);
 }
 
@@ -42,15 +42,14 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 3.2rem;
-    letter-spacing: 5px;
-    font-weight: 800;
+    font-size: 3rem;
+    letter-spacing: 4px;
 }
 
 .tagline {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: #233D26;
-    margin-top: 6px;
+    margin-top: 5px;
     font-weight: 600;
 }
 
@@ -61,7 +60,7 @@ header h1 {
 .insta-btn {
     color: #FFFFFF;
     text-decoration: none;
-    background: rgba(0, 0, 0, 0.45);
+    background: rgba(0, 0, 0, 0.4);
     padding: 8px 18px;
     border-radius: 20px;
     font-size: 0.9rem;
@@ -71,7 +70,7 @@ header h1 {
 }
 
 .insta-btn:hover {
-    background: #233D26;
+    background: #556B2F;
 }
 
 main {
@@ -88,7 +87,7 @@ main {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    background: rgba(0, 0, 0, 0.55);
+    background: rgba(0, 0, 0, 0.5);
     color: #FFFFFF;
     padding: 6px 14px;
     border-radius: 20px;
@@ -127,12 +126,12 @@ main {
 }
 
 .tab-btn:hover {
-    background: rgba(35, 61, 38, 0.8);
+    background: rgba(85, 107, 47, 0.7);
 }
 
 .tab-btn.active {
-    background: #233D26;
-    border-color: #233D26;
+    background: #556B2F;
+    border-color: #556B2F;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
@@ -153,7 +152,7 @@ main {
 
 .concept-card, .process-section, .faq-section {
     background: rgba(255, 255, 255, 0.96);
-    border-left: 6px solid #233D26;
+    border-left: 6px solid #556B2F;
     padding: 1.8rem;
     border-radius: 8px;
     margin-bottom: 2rem;
@@ -162,7 +161,7 @@ main {
 
 .concept-card h2, .process-section h3, .faq-section h3 {
     margin-top: 0;
-    color: #233D26;
+    color: #556B2F;
 }
 
 .quote {
@@ -171,10 +170,11 @@ main {
 }
 
 .section-title {
-    color: #233D26;
+    color: #FFFFFF;
     text-align: center;
     margin-top: 1rem;
     margin-bottom: 1.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .cards-container {
@@ -189,7 +189,7 @@ main {
     padding: 1.8rem;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    border-top: 5px solid #233D26;
+    border-top: 5px solid #556B2F;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -197,7 +197,7 @@ main {
 
 .badge {
     align-self: flex-start;
-    background: #233D26;
+    background: #556B2F;
     color: #FFFFFF;
     font-size: 0.75rem;
     padding: 4px 10px;
@@ -211,7 +211,7 @@ main {
     width: 100%;
     box-sizing: border-box;
     text-align: center;
-    background-color: #233D26;
+    background-color: #556B2F;
     color: #FFFFFF;
     text-decoration: none;
     padding: 12px;
@@ -225,7 +225,7 @@ main {
 }
 
 .btn:hover {
-    background-color: #3B593F;
+    background-color: #3f5022;
 }
 
 .steps-grid {
@@ -237,7 +237,7 @@ main {
 
 .step-item {
     padding: 1rem;
-    background: rgba(35, 61, 38, 0.08);
+    background: rgba(85, 107, 47, 0.08);
     border-radius: 8px;
     text-align: center;
 }
@@ -245,7 +245,7 @@ main {
 .step-num {
     width: 32px;
     height: 32px;
-    background: #233D26;
+    background: #556B2F;
     color: #FFFFFF;
     border-radius: 50%;
     display: flex;
@@ -288,7 +288,7 @@ summary {
     width: 100%;
     padding: 2rem;
     border-radius: 12px;
-    border-top: 6px solid #233D26;
+    border-top: 6px solid #556B2F;
     position: relative;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     animation: fadeIn 0.25s ease;
@@ -307,7 +307,7 @@ summary {
 
 .modal-box h3 {
     margin-top: 0;
-    color: #233D26;
+    color: #556B2F;
     font-size: 1.3rem;
 }
 
@@ -322,7 +322,7 @@ summary {
     display: block;
     font-size: 0.85rem;
     font-weight: 700;
-    color: #233D26;
+    color: #2B2D2F;
     margin-bottom: 5px;
     margin-top: 12px;
 }
@@ -341,7 +341,7 @@ summary {
 .modal-box input:focus,
 .modal-box select:focus {
     outline: none;
-    border-color: #233D26;
+    border-color: #556B2F;
 }
 
 .modal-submit {
