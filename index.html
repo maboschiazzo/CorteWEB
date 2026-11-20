@@ -8,6 +8,11 @@
 </head>
 <body>
 
+    <!-- Botón fijo arriba a la derecha -->
+    <button class="agenda-top-btn" onclick="openModal()">
+        📅 Agendá tu presupuesto
+    </button>
+
     <header>
         <div class="brand">
             <h1>CORTE</h1>
@@ -16,7 +21,7 @@
         
         <div class="social-header">
             <a href="https://instagram.com/clickdecorte" target="_blank" class="insta-btn">
-                🅾 @clickdecorte 
+               🅾 @clickdecorte
             </a>
         </div>
     </header>
@@ -28,7 +33,7 @@
             <span>Disponible para nuevos proyectos y consultas</span>
         </div>
 
-        <!-- Menú Horizontal de Solapas (Solo 2 pestañas) -->
+        <!-- Menú Horizontal de Solapas -->
         <nav class="tabs-nav">
             <button class="tab-btn active" onclick="openTab(event, 'concepto')">🍷 ¿Qué es CORTE?</button>
             <button class="tab-btn" onclick="openTab(event, 'web')">💻 Páginas Web</button>
@@ -58,9 +63,9 @@
                 <div class="card principal">
                     <span class="badge">Para Emprendedores</span>
                     <h3>Creación de Página Web Inicial</h3>
-                    <p>Diseño web simple, moderno y funcional. La solución directa para que tu emprendimiento tenga presencia en internet y recibas consultas por WhatsApp de forma sencilla y directa.</p>
+                    <p>Diseño web simple, moderno y funcional. Arrancamos con una charla inicial de 20 a 30 minutos para entender qué necesita tu marca, armar un boceto a medida y pasarte un presupuesto cerrado.</p>
 
-                    <a href="https://wa.me/5493513835105?text=Hola%20CORTE,%20quiero%20consultar%20por:%20Creaci%C3%B3n%20de%20P%C3%A1gina%20Web%20Inicial" class="btn" target="_blank">Consultar por WhatsApp</a>
+                    <button onclick="openModal()" class="btn">Agendar charla inicial</button>
                 </div>
             </section>
 
@@ -69,18 +74,18 @@
                 <div class="steps-grid">
                     <div class="step-item">
                         <div class="step-num">1</div>
-                        <h4>Contacto</h4>
-                        <p>Hablamos por WhatsApp para entender tu marca.</p>
+                        <h4>Charla Inicial</h4>
+                        <p>20-30 min por videollamada o café en Córdoba para bajar ideas a tierra.</p>
                     </div>
                     <div class="step-item">
                         <div class="step-num">2</div>
-                        <h4>Diseño</h4>
-                        <p>Armamos tu sitio simple y a medida.</p>
+                        <h4>Boceto & Presupuesto</h4>
+                        <p>Definimos estructura, tiempos y un valor cerrado a tu medida.</p>
                     </div>
                     <div class="step-item">
                         <div class="step-num">3</div>
                         <h4>¡Listo!</h4>
-                        <p>Tu web queda lista para recibir clientes.</p>
+                        <p>Armamos tu sitio y queda listo para recibir clientes.</p>
                     </div>
                 </div>
             </section>
@@ -105,7 +110,34 @@
         <p class="author-credits">Diseño y Desarrollo Web por <b>M.A.A.B.</b></p>
     </footer>
 
-    <!-- Script simple para alternar solapas -->
+    <!-- VENTANA MODAL DE AGENDA -->
+    <div id="agendaModal" class="modal-overlay" onclick="closeModalOutside(event)">
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <h3>📅 Agendá tu presupuesto</h3>
+            <p class="modal-desc">
+                Coordinemos una charla inicial de <b>20 a 30 minutos</b> para bajar a tierra qué necesitás y armarte un presupuesto cerrado.
+            </p>
+
+            <form onsubmit="sendWhatsApp(event)">
+                <label for="clientName">Tu nombre o emprendimiento</label>
+                <input type="text" id="clientName" placeholder="Ej: Sofía / Tienda Sol" required>
+
+                <label for="meetingType">¿Cómo preferís reunirnos?</label>
+                <select id="meetingType">
+                    <option value="Virtual (Videollamada 20-30 min)">💻 Virtual (Videollamada)</option>
+                    <option value="Presencial (Café en Córdoba)">☕ Presencial (Café en Córdoba)</option>
+                </select>
+
+                <label for="preferredDay">Día y horario estimado</label>
+                <input type="text" id="preferredDay" placeholder="Ej: Martes por la tarde / Jueves 10 hs" required>
+
+                <button type="submit" class="btn modal-submit">Confirmar por WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script>
         function openTab(evt, tabName) {
             let i, tabcontent, tablinks;
@@ -121,6 +153,31 @@
             document.getElementById(tabName).style.display = "block";
             document.getElementById(tabName).classList.add("active");
             evt.currentTarget.classList.add("active");
+        }
+
+        function openModal() {
+            document.getElementById("agendaModal").style.display = "flex";
+        }
+
+        function closeModal() {
+            document.getElementById("agendaModal").style.display = "none";
+        }
+
+        function closeModalOutside(event) {
+            if (event.target.id === "agendaModal") {
+                closeModal();
+            }
+        }
+
+        function sendWhatsApp(event) {
+            event.preventDefault();
+            const name = document.getElementById("clientName").value.trim();
+            const type = document.getElementById("meetingType").value;
+            const day = document.getElementById("preferredDay").value.trim();
+
+            const text = `Hola CORTE! Soy ${name}. Me gustaría agendar la charla inicial de 20-30 min para pedir un presupuesto.%0A• Modalidad: ${type}%0A• Disponibilidad: ${day}`;
+            window.open(`https://wa.me/5493513835105?text=${text}`, "_blank");
+            closeModal();
         }
     </script>
 
