@@ -8,9 +8,8 @@
 </head>
 <body>
 
-    <!-- Botón fijo arriba a la derecha -->
     <button class="agenda-top-btn" onclick="openModal()">
-        📅 Agendá tu presupuesto
+        🕜 Agendá tu presupuesto
     </button>
 
     <header>
@@ -21,7 +20,7 @@
         
         <div class="social-header">
             <a href="https://instagram.com/clickdecorte" target="_blank" class="insta-btn">
-                📸 @clickdecorte
+                                        🅾 @clickdecorte
             </a>
         </div>
     </header>
@@ -33,7 +32,7 @@
             <span>Disponible para nuevos proyectos y consultas</span>
         </div>
 
-        <!-- Menú Horizontal de Solapas -->
+        <!-- Menú Horizontal de Solapas (Solo 2 pestañas) -->
         <nav class="tabs-nav">
             <button class="tab-btn active" onclick="openTab(event, 'concepto')">🍷 ¿Qué es CORTE?</button>
             <button class="tab-btn" onclick="openTab(event, 'web')">💻 Páginas Web</button>
@@ -109,12 +108,12 @@
         <p>© 2026 <b>CORTE</b> — Ventas & Soluciones Digitales</p>
         <p class="author-credits">Diseño y Desarrollo Web por <b>M.A.A.B.</b></p>
     </footer>
-
+    
     <!-- VENTANA MODAL DE AGENDA -->
     <div id="agendaModal" class="modal-overlay" onclick="closeModalOutside(event)">
         <div class="modal-box">
             <button class="modal-close" onclick="closeModal()">✕</button>
-            <h3>📅 Agendá tu presupuesto</h3>
+            <h3>🕜 Agendá tu presupuesto</h3>
             <p class="modal-desc">
                 Coordinemos una charla inicial de <b>20 a 30 minutos</b> para bajar a tierra qué necesitás y armarte un presupuesto cerrado.
             </p>
@@ -137,7 +136,7 @@
         </div>
     </div>
 
-    <!-- Scripts -->
+    <!-- Script simple para alternar solapas -->
     <script>
         function openTab(evt, tabName) {
             let i, tabcontent, tablinks;
@@ -154,7 +153,7 @@
             document.getElementById(tabName).classList.add("active");
             evt.currentTarget.classList.add("active");
         }
-
+        
         function openModal() {
             document.getElementById("agendaModal").style.display = "flex";
         }
